@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiszki</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Fiszki</h1>
+
+  <!-- Wybór talii -->
+  <section id="decks"></section>
+
+  <!-- Nauka -->
+  <section id="study" hidden>
+    <p id="info"></p>
+
+    <div id="card" class="card">
+      <div class="card-inner">
+        <div class="face front"></div>
+        <div class="face back"></div>
+      </div>
+    </div>
+
+    <p class="hint">Kliknij, aby odwrócić. Przesuń w prawo = umiem, w lewo = nie umiem.</p>
+
+    <div class="buttons">
+      <button id="btn-no">✗ Nie umiem</button>
+      <button id="btn-yes">✓ Umiem</button>
+    </div>
+    <button id="btn-back">← Talie</button>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

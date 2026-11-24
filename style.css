@@ -1,0 +1,90 @@
+body {
+  font-family: sans-serif;
+  background: #f0f2f5;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+[hidden] { display: none !important; }
+
+/* Lista talii */
+#decks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.deck {
+  background: white;
+  padding: 20px;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.deck:hover { transform: scale(1.03); }
+
+/* Karta */
+.card {
+  width: 300px;
+  height: 200px;
+  margin: 20px auto;
+  perspective: 1000px; /* głębia 3D */
+  cursor: pointer;
+  touch-action: none; /* gesty obsługujemy sami */
+  user-select: none;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden; /* ukrywa tył ściany */
+  padding: 10px;
+}
+
+.front { background: white; }
+
+.back {
+  background: #4a90e2;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Kolor podczas przesuwania */
+.card.yes .face { box-shadow: 0 0 0 4px #2ecc71; }
+.card.no  .face { box-shadow: 0 0 0 4px #e74c3c; }
+
+.hint { color: #777; font-size: 14px; }
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#btn-yes { background: #2ecc71; color: white; }
+#btn-no  { background: #e74c3c; color: white; }
